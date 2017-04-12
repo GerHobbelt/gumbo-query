@@ -36,4 +36,4 @@ find_library(Gumbo_static_LIBRARY
 # NOTE: Singular variables for this library, plural for libraries this this lib depends on.
 set(Gumbo_PROCESS_INCLUDES Gumbo_INCLUDE_DIR)
 set(Gumbo_PROCESS_LIBS Gumbo_LIBRARY Gumbo_static_LIBRARY)
-libfind_process(Gumbo)
+#libfind_process(Gumbo)
