@@ -9,6 +9,8 @@ set_target_properties(gumbo_query_shared PROPERTIES OUTPUT_NAME "gq")
 add_library(gumbo_query_static STATIC ${SRC_FILES})
 set_target_properties(gumbo_query_static PROPERTIES OUTPUT_NAME "gq")
 
+set_target_properties(gumbo_query_shared PROPERTIES POSITION_INDEPENDENT_CODE ON)
+
 target_link_libraries(gumbo_query_shared ${Gumbo_LIBRARY})
 # Link our static library with the static Gumbo dependency if it exists.
 if(${Gumbo_static_LIBRARY})
