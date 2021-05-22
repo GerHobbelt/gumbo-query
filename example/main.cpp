@@ -32,8 +32,13 @@ void test_escape() {
     printf("Node: #%s#\n", content.c_str());
 }
 
+#if defined(BUILD_MONOLITHIC)
+#define main      gumbo_query_test_main
+#endif
+
 int main() {
 	test_parser();
 	test_html();
     test_escape();
+	return 0;
 }
