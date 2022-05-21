@@ -1,6 +1,7 @@
 # libgumbo_query
 
 # Gumbo dependency include directory.
+message(${Gumbo_INCLUDE_DIRS})
 include_directories(${Gumbo_INCLUDE_DIRS})
 
 file(GLOB SRC_FILES *.cpp)
