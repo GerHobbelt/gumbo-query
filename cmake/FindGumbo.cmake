@@ -35,7 +35,13 @@ find_library(Gumbo_static_LIBRARY
 # Set the include dir variables and the libraries and let libfind_process do the rest.
 # NOTE: Singular variables for this library, plural for libraries this this lib depends on.
 set(Gumbo_INCLUDE_OPTS Gumbo_INCLUDE_DIR)
-set(Gumbo_LIBRARY_OPTS Gumbo_LIBRARY Gumbo_static_LIBRARY)
-libfind_process(Gumbo)
 
-message(${Gumbo_INCLUDE_DIRS})
+if(NOT "${Gumbo_LIBRARY}" STREQUAL "Gumbo_LIBRARY-NOTFOUND")
+    list(APPEND Gumbo_LIBRARY_OPTS Gumbo_LIBRARY)
+endif()
+
+if(NOT "${Gumbo_static_LIBRARY}" STREQUAL "Gumbo_static_LIBRARY-NOTFOUND")
+    list(APPEND Gumbo_LIBRARY_OPTS Gumbo_static_LIBRARY)
+endif()
+
+libfind_process(Gumbo)
