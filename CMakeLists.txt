@@ -7,7 +7,7 @@ include(cmake/PreventInSourceBuilds.cmake)
 set(CMAKE_VERBOSE_MAKEFILE ON)
 
 # Set our output directories.
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 
 # Create library directory if it does not exist.

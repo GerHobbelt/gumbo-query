@@ -18,9 +18,11 @@ set(gumbo_query_LIBRARIES gumbo_query_shared gumbo_query_static)
 set_property(TARGET ${gumbo_query_LIBRARIES} PROPERTY CXX_STANDARD 11)
 set_property(TARGET ${gumbo_query_LIBRARIES} PROPERTY CXX_STANDARD_REQUIRED ON)
 
-install(TARGETS gumbo_query_shared  gumbo_query_static
-	LIBRARY DESTINATION lib
-     	ARCHIVE DESTINATION lib)
+install(TARGETS gumbo_query_shared gumbo_query_static
+	LIBRARY DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/lib
+     	ARCHIVE DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/lib)
 
 file(GLOB HEAD_FILES *.h)
+target_sources(gumbo_query_static INTERFACE ${HEAD_FILES})
+message(${HEAD_FILES})
 install(FILES ${HEAD_FILES} DESTINATION include/gq)
