@@ -1,27 +1,35 @@
 # gumbo-query
+
 A C++ library that provides jQuery-like selectors for Google's Gumbo-Parser.
 
 Selector engine is an implementation based on [cascadia](https://github.com/andybalholm/cascadia).
 
 ## Installation
+
 2 ways:
 
 Through homebrew (Recommended):
+
 ```bash
 $ brew install gumbo-query
 ```
+
 Through git:
+
 ```bash
 $ git clone https://github.com/Falven/gumbo-query
 $ cd gumbo-query/build && cmake .. && make && make test
 $ sudo make install
 ```
+
 And to generate Doxygen documentation:
+
 ```bash
 $ make doc
 ```
 
 ## Usage
+
 ```C++
 #include <iostream>
 #include <string>
